@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JLESC &mdash; Automatic I/O scheduling algorithm selection for parallel file systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Joint Laboratory for Extreme Scale Computing includes researchers from the French National Institute for Research in Computer Science and Control (INRIA), the University of Illinois at Urbana-Champaign’s Center for Extreme-Scale Computation, the National Center for Supercomputing Applications, Argonne National Laboratory, Barcelona Supercomputing Center, Julich Supercomputing Center and Riken/AICS. The Joint Lab is part of Parallel@Illinois.
+">
+  <link rel="canonical" href="https://jlesc.github.io/projects/automatic_scheduler_project/">
+
+  <link type="application/atom+xml" rel="alternate" href="https://jlesc.github.io/feed.xml" title="" />
+  <link type="text/css" rel="stylesheet" href="/assets/main-1121dc6ec5d1807973ca79a9ef9ac00b1a6150a25e54d3549d42c6d793195499.css">    
+</head>
+
+  <body>
+    <header>
+  <noscript>
+    <div class="container-fluid">
+      <div class="card card-block card-danger row">
+        <p class="card-text text-sm-center">
+          You have Javascript disabled. This website might not work as intended and will look not as good as it can.
+          <br />
+          Please activate Javascript for this website. We are not loading content from other domains.
+        </p>
+      </div>
+    </div>
+  </noscript>
+  <nav>
+    <div class="navbar navbar-fixed-top navbar-dark bg-inverse" role="navigation">
+      <div class="container">
+        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar">
+          <i class="fa fa-bars fa-fw"></i>
+        </button>
+
+        <a class="navbar-brand" href="/">JLESC</a>
+
+        <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
+          <ul class="nav navbar-nav">
+            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+  <div class="dropdown-menu">
+    <a href="/about/" class="dropdown-item">JLESC</a>
+    <a href="/about/partners/" class="dropdown-item">Partners</a>
+    <a href="/about/people/" class="dropdown-item">People</a>
+    <a href="/about/grants/" class="dropdown-item">Grants</a>
+  </div>
+</li>
+
+            <li class="nav-item">
+              <a href="/news/" class="nav-link">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/events/">Events</a>
+            </li>
+            <li class="nav-item dropdown active">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Research</a>
+  <div class="dropdown-menu">
+    <a href="/research/collaboration/" class="dropdown-item">On Collaboration</a>
+    <a href="/projects/" class="dropdown-item active">Projects</a>
+    <!-- <a href="/software/" class="dropdown-item">Software</a> -->
+    <!-- <a href="/research/visits/" class="dropdown-item">Visits</a> -->
+  </div>
+</li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/references/">References</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+              <a class="nav-link"
+                 href="https://github.com/JLESC/jlesc.github.io/wiki"
+                 target="_blank"
+                 title="How to contribute"
+                 data-toggle="tooltip"
+                 data-placement="left">
+                <i class="fa fa-fw fa-book"></i>
+                How To
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      <div class="container">
+        <div class="post post-project">
+  <article class="post-content">
+    <div class="row">
+      <header class="col-sm-12 post-header">
+        <h1 class="pull-left">Automatic I/O scheduling algorithm selection for parallel file systems</h1>
+      </header>
+    </div>
+    <div class="row">
+      <aside class="col-lg-5 col-sm-12 pull-lg-right collapse in" id="meta-aside">
+        <section class="group-meta card">
+  <div class="card-header">
+    Project Profile
+  </div>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item row">
+      <label class="col-sm-4">Topics</label>
+      <div class="col-sm-8">
+        
+          <span class="clearfix">
+            <span class="topic topic-title">I/O, Storage and In-Situ Processing</span>
+          </span>
+        
+      </div>
+    </li>
+    
+      <li class="list-group-item row">
+        <label class="col-sm-4">Keywords</label>
+        <div class="col-sm-8">
+          
+            <span class="clearfix"></span>
+          
+        </div>
+      </li>
+    
+    
+    
+      <li class="list-group-item row">
+        <label class="col-sm-4">Members</label>
+        <div class="col-sm-8">
+          
+            <span class="clearfix">
+              <span class="person given-name">Toni</span> <span class="person sur-name">Cortes</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>)
+              <span class="pull-right">
+                <a title="Project Head" data-toggle="tooltip"><i class="fa fa-graduation-cap fa-fw"></i></a>
+              </span>
+            </span>
+          
+          
+            <span class="clearfix">
+              <span class="person given-name">Francieli</span> <span class="person sur-name">Zanon Boito</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Ramon</span> <span class="person sur-name">Nou</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Jean-Francois</span> <span class="person sur-name">Mehaut</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Phillipe</span> <span class="person sur-name">Navaux</span> (<abbr title="University of Illinois at Urbana-Champaign" class="initialism" data-toggle="tooltip">UIUC</abbr>)
+            </span>
+          
+        </div>
+      </li>
+    
+    
+    <li class="list-group-item row">
+      <label class="col-sm-4">Status</label>
+      <div class="col-sm-8">
+        <span class="project-status project-status-finished">finished</span>
+      </div>
+    </li>
+    
+  </ul>
+</section>
+        <section class="card" id="toc">
+          <div class="card-header">
+            Table of Contents
+          </div>
+          <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#research-topics-and-goals">Research topics and goals</a></li>
+<li class="toc-entry toc-h2"><a href="#report-20152016">Report 2015/2016</a></li>
+<li class="toc-entry toc-h2"><a href="#report-20162017">Report 2016/2017</a></li>
+<li class="toc-entry toc-h2"><a href="#report-20172018">Report 2017/2018</a></li>
+<li class="toc-entry toc-h2"><a href="#visits-and-meetings">Visits and meetings</a></li>
+<li class="toc-entry toc-h2"><a href="#impact-and-publications">Impact and publications</a></li>
+<li class="toc-entry toc-h2"><a href="#future-plans">Future plans</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
+</ul>
+        </section>
+      </aside>
+      <div class="col-lg-7 col-sm-12 pull-lg-left content" id="main-content">
+        
+        <h2 id="research-topics-and-goals">
+<a id="research-topics-and-goals" class="anchor" href="#research-topics-and-goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Research topics and goals</h2>
+
+<p>This is an finished collaboration between researchers from the
+BSC, INRIA, and the Federal University of Rio Grande do Sul (UFRGS).</p>
+
+<p>We are investigating the use of pattern matching at parallel file system (PFS) servers for automatic I/O scheduling algorithm selection.
+Previous research from Boito et al. (INRIA, UFRGS) indicated the best choice
+in scheduling algorithm for PFS servers depends on characteristics of
+the applications and of the server, therefore there is potential for
+dynamic algorithm selection to improve performance. Additionally,
+previous research from Nou et al. (BSC, IOLanes European project,
+FP7-248615) applied pattern matching for dynamic scheduler selection
+in the context of disk scheduling. The main difference between the
+contexts of disk scheduling and parallel file system scheduler is the
+level - the former works with blocks, while the latter works with
+files and offsets. Furthermore, the high concurrency in the access to
+the servers, and the variability of arrival times impose a greater
+challenge to the pattern matching task.</p>
+
+<p>The collaboration started during the JLESC workshop in June 2015, in
+Barcelona. Progress has been slow due to the lack of personnel.</p>
+
+<h2 id="report-20152016">
+<a id="report-20152016" class="anchor" href="#report-20152016" aria-hidden="true"><span class="octicon octicon-link"></span></a>Report 2015/2016</h2>
+
+<p>As a first step, it was important to check the viability of such
+dynamic scheduling algorithm selection. Previously evaluated
+approaches involved selecting an algorithm at the beginning of the
+execution only. On the other hand, the idea of this work is to have a
+time window of requests to form a pattern, and re-select the algorithm
+after each pattern. The viability of this approach is related to the
+size of the window, which impacts the pattern matching capacities.</p>
+
+<p>A new scheduling policy was added to the AGIOS scheduling library
+(developed by Francieli Boito). This scheduler, called Armed Bandit,
+periodically changes the scheduling algorithm in place. It does not
+use any knowledge about patterns, but keeps performance metrics
+(measured in different time windows) to each scheduling algorithm
+available, and selects the next algorithm randomly, giving higher
+probability to the algorithms that presented higher performance.</p>
+
+<p>Experiments were conducted with different window lengths, using the
+OrangeFS parallel file system, searching for a balance between
+performance improvements and the overhead of deciding and changing the
+scheduling algorithm.  Results show that 4s windows are a good
+trade-off, and the results are also similar to what was observed to
+the best static scheduling algorithm in each situation, as long as
+tests are long enough to compensate the initial phases when the
+mechanism is changing between schedulers just to collect
+information. This indicated there is potential for the pattern
+matching approach to be successful, and provides a baseline of
+comparison for its results.</p>
+
+<h2 id="report-20162017">
+<a id="report-20162017" class="anchor" href="#report-20162017" aria-hidden="true"><span class="octicon octicon-link"></span></a>Report 2016/2017</h2>
+
+<p>The idea of the pattern matching approach is to build a knowledge base
+about access patterns and performance with different scheduling
+algorithms. A Markov chain must be built with these patterns, so by
+predicting the next pattern, we can change the scheduling algorithm to
+the best one for that pattern. The pattern matching module, added to
+AGIOS, is executed after each time window. The pattern observed during
+this window is compared with existing patterns, and stored as a new
+one if there is no match. Performance information with different
+scheduling algorithms is kept to each pattern, so with the prediction
+we can also choose the next algorithm to be used. When information is
+not enough to decide, the Armed Bandit approach can be used. It is
+clear the success of the approach depends on how access patterns are
+represented, matched, and predicted, hence this was the first aspect
+to be evaluated.</p>
+
+<p>Patterns are represented as time series of file offset differences
+(each point is the distance inside the file between two consecutive
+requests). Situations with multiple files are modeled with an idea of
+a virtual disk where files are placed sequentially, so the distance
+between positions in different files can be measured. To compare
+patterns, the FastDTW approximation of the DTW algorithm was
+used. Additional information about patterns - number of read/write
+requests, amount of data read/written, number of accessed files, etc -
+are used before comparing the time series to improve the quality of
+the results and to decrease the number of calls to DTW.</p>
+
+<p>The time series comparison results in a score that depends on the
+time series, so these scores are normalized by the maximum DTW score
+observed by the pattern matching module. The normalized scores are
+compared to a given threshold to decide if the patterns match or
+not. Depending on the past comparisons, it may be the case that very
+similar patterns do not match because of the inadequate maximum score,
+but by adjusting this value over time, the mechanism decisions are
+expected to improve after an initial phase.</p>
+
+<p>We executed the MPI-IO Test benchmark generating different access
+patterns regarding spatiality (contiguous or non-contiguous), request
+size (32KB, 4MB, or 16MB), and number of processes (32 or 64). A set
+of these executions, composed of 120 executions (10 repetitions of
+each of the 12 different tests), was provided to the mechanism in
+random order.</p>
+
+<p>Initial evaluations showed the mechanism creates very small knowledge
+ bases, meaning it was matching more patterns than it should. We have
+ also identified the comparisons between patterns using FastDTW could
+ become a performance problem as the knowledge base grows.</p>
+
+<h2 id="report-20172018">
+<a id="report-20172018" class="anchor" href="#report-20172018" aria-hidden="true"><span class="octicon octicon-link"></span></a>Report 2017/2018</h2>
+
+<p>The behavior of the FastDTW mechanism when comparing patterns was
+further analyzed, leading to better choices for the mechanism’s
+parameters such as the maximum tolerated difference between patterns
+and the threshold for matching. New results presented good results
+when comparing 1D strided application patterns, but results were not
+as good for contiguous application patterns, as they lead to more
+non-contiguous patterns at server-side, and the distances calculated
+between the time series become higher.</p>
+
+<p>To mitigate this problem, we have investigated compression of
+patterns, using buckets to combine requests in order to make patterns
+shorter. The compression decreases the variation between repetitions
+of the same application access pattern, and improves results for
+the contiguous case.</p>
+
+<p>Regarding performance, the sequential FastDTW code was modified to
+optimize its memory accesses, leading to a speedup of up
+to 6000. Additionally, we implemented version that uses OpenMP to
+perform different comparisons in parallel. Preliminary results show a
+speedup of 2 with 4 OpenMP threads.</p>
+
+<p>We are now investigating the pattern matching mechanism with more
+complex patterns, mixing read and write operations to multiple files
+from multiple applications. In the next months, we hope to translate
+these results into performance improvements, and write a scientific
+paper with our findings.</p>
+
+<h2 id="visits-and-meetings">
+<a id="visits-and-meetings" class="anchor" href="#visits-and-meetings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visits and meetings</h2>
+<p>Email interaction. Meetings in JLESC’16 at Kobe.
+Telco to discuss new results.</p>
+
+<h2 id="impact-and-publications">
+<a id="impact-and-publications" class="anchor" href="#impact-and-publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Impact and publications</h2>
+<p>None yet.</p>
+
+<!--
+
+
+
+
+
+-->
+
+<ol class="bibliography"></ol>
+
+<h2 id="future-plans">
+<a id="future-plans" class="anchor" href="#future-plans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future plans</h2>
+<p>The project is considered finished, and had opened new collaboration with the same actors that will create a new project inside the JLESC umbrella. For this finished project, the final step is to write a paper and publish the results.</p>
+
+<h2 id="references">
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+
+<ol class="bibliography">
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          CPE:CPE3606
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseCPE:CPE3606Bibtex" aria-expanded="false" aria-controls="collapseCPE:CPE3606Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseCPE:CPE3606Abstract" aria-expanded="false" aria-controls="collapseCPE:CPE3606Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="CPE:CPE3606">Boito, Francieli Zanon, Rodrigo Virote Kassick, Philippe O. A. Navaux, and Yves Denneulin. 2016. “Automatic I/O Scheduling Algorithm Selection for Parallel File Systems.” <i>Concurrency and Computation: Practice and Experience</i> 28 (8): 2457–72. doi:10.1002/cpe.3606.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseCPE:CPE3606Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@article{CPE:CPE3606,
+  author = {Boito, Francieli Zanon and Kassick, Rodrigo Virote and Navaux, Philippe O. A. and Denneulin, Yves},
+  title = {Automatic I/O scheduling algorithm selection for parallel file systems},
+  journal = {Concurrency and Computation: Practice and Experience},
+  volume = {28},
+  number = {8},
+  issn = {1532-0634},
+  url = {http://dx.doi.org/10.1002/cpe.3606},
+  doi = {10.1002/cpe.3606},
+  pages = {2457--2472},
+  keywords = {I/O scheduling, parallel file systems, high-performance computing},
+  year = {2016},
+  note = {cpe.3606}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          11637260
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapse11637260Bibtex" aria-expanded="false" aria-controls="collapse11637260Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapse11637260Abstract" aria-expanded="false" aria-controls="collapse11637260Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="11637260">Nou, R., J. Giralt, and A. Cortes. 2012. “Automatic I/O Scheduler Selection through Online Workload Analysis.” In <i>IEEE International Conference on Autonomic and Trusted Computing</i>, 431–38. doi:10.1109/UIC-ATC.2012.12.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapse11637260Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{11637260,
+  author = {Nou, R. and Giralt, J. and Cortes, A.},
+  booktitle = {IEEE International Conference on Autonomic and Trusted Computing},
+  doi = {10.1109/UIC-ATC.2012.12},
+  month = sep,
+  pages = {431--438},
+  title = {Automatic I/O scheduler selection through online workload analysis},
+  year = {2012}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+</ol>
+
+      </div>
+    </div>
+  </article>
+  
+</div>
+
+      </div>
+    </main>
+    <footer id="site-footer">
+  <div class="navbar navbar-full navbar-light">
+    <div class="container">
+      <div class="row small">
+        <div class="col-xs-6 col-sm-3">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/imprint/">
+                <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://help.github.com/articles/github-privacy-statement/">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Privacy</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 hidden-xs-down">
+          <div class="nav navbar-nav text-xs-center">
+            <span class="credit">
+              Powered by
+              <a class="nav-link" href="https://jekyllrb.com">Jekyll</a> and
+              <a class="nav-link" href="https://getbootstrap.com">Twitter Bootstrap</a>
+            </span>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Sources</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io/issues">
+                <i class="fa fa-bug fa-fw"></i><span class="hidden-md-down">Found a typo?</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="/assets/main-f379c72bc0f1ca6c99205f5005786103a2b61210898a52b504597ea1e2e75917.js"></script>
+
+<!--  -->
+
+  </body>
+</html>

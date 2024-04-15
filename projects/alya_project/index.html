@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://jlesc.github.io/projects/alya_project/">
 
   <link type="application/atom+xml" rel="alternate" href="https://jlesc.github.io/feed.xml" title="" />
-  <link type="text/css" rel="stylesheet" href="/assets/main-167e11ddb3cf37684b12f71844e6f57af3cc3c85c3c0db40eabf910fff2a2e09.css">
+  <link type="text/css" rel="stylesheet" href="/assets/main-1121dc6ec5d1807973ca79a9ef9ac00b1a6150a25e54d3549d42c6d793195499.css">    
 </head>
 
   <body>
@@ -58,8 +58,8 @@
   <div class="dropdown-menu">
     <a href="/research/collaboration/" class="dropdown-item">On Collaboration</a>
     <a href="/projects/" class="dropdown-item active">Projects</a>
-    <a href="/software/" class="dropdown-item">Software</a>
-    <a href="/research/visits/" class="dropdown-item">Visits</a>
+    <!-- <a href="/software/" class="dropdown-item">Software</a> -->
+    <!-- <a href="/research/visits/" class="dropdown-item">Visits</a> -->
   </div>
 </li>
 
@@ -161,7 +161,7 @@
     <li class="list-group-item row">
       <label class="col-sm-4">Status</label>
       <div class="col-sm-8">
-        <span class="project-status project-status-starting">starting</span>
+        <span class="project-status project-status-suspended">suspended</span>
       </div>
     </li>
     
@@ -173,10 +173,10 @@
           </div>
           <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#research-topic-and-goals">Research topic and goals</a></li>
-<li class="toc-entry toc-h2"><a href="#results-for-20152016">Results for 2015/2016</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20162017">Results for 2016/2017</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20172018">Results for 2017/2018</a></li>
 <li class="toc-entry toc-h2"><a href="#visits-and-meetings">Visits and meetings</a></li>
 <li class="toc-entry toc-h2"><a href="#impact-and-publications">Impact and publications</a></li>
-<li class="toc-entry toc-h2"><a href="#person-month-efforts-in-20152016">Person-Month efforts in 2015/2016</a></li>
 <li class="toc-entry toc-h2"><a href="#future-plans">Future plans</a></li>
 <li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul>
@@ -191,10 +191,25 @@
 In that framework both parallel sparse direct and hybrid iterative/direct linear solvers will be integrated in the Alya code to study their performance and identify their possible bottlenecks.
 This action will contribute to the definition of the global API for the solver stack currently developed at Inria that will ease the integration and testing of the linear solver in any large simulation code.</p>
 
-<h2 id="results-for-20152016">
-<a id="results-for-20152016" class="anchor" href="#results-for-20152016" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2015/2016</h2>
+<!-- ## Results for 2015/2016
 
-<p>This activity has just started in February 2016, preliminary validation experiments have been performed but no scientific results yet.</p>
+This activity has just started in February 2016, preliminary validation experiments have been performed but no scientific results yet. -->
+
+<h2 id="results-for-20162017">
+<a id="results-for-20162017" class="anchor" href="#results-for-20162017" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2016/2017</h2>
+
+<p>A database with testcases has been created on Marenostrum. This database includes a series of representative examples to test unsymmetric, symmetric and SPD matrices. In addition, different mesh topologies have been considered to assess the effects of mesh anisotropy, computational domain elongation, etc. 
+Benchmarking is currently carried out to compare Alya internal solvers and MAPHYS.</p>
+
+<h2 id="results-for-20172018">
+<a id="results-for-20172018" class="anchor" href="#results-for-20172018" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2017/2018</h2>
+
+<ol>
+  <li>Full integration of the Inria solvers with their current individual API in the Alya code.</li>
+  <li>Scalability studies carried out on for CFD and solid mechanics applications.</li>
+  <li>New release of the PaStiX solver 6.0 :
+We have presented two approaches using a Block Low-Rank (BLR) compression technique to reduce the memory footprint and/or the time-to-solution of the sparse supernodal solver PaStiX (See <a href="#pichon:hal-01485507">(Pichon et al. 2017)</a> and <a href="#pichon:hal-01502215">(Pichon et al. 2017)</a>). Thanks to this compression technique, we have been able to solve a 1 billion unknown system (a 3D Laplacian matrix 100x100x100.000) on a single node with 3Tb of memory. The factorization time for this system was less than 6 hours using 96 cores, and the precision achieved at the first solve was 10e-5. With 10 additional iterative refinement steps, we reached easily 10e-8 in double precision. The cost of one solve was limited to 280 seconds. We were able to save 9Tb over the 11Tb that would be requested by the direct solver. The last release of the software includes these implementations and the description of the parameters are documented in <a href="http://pastix.gforge.inria.fr/doxygen/html/group__pastix__users.html">https://gitlab.inria.fr/solverstack/pastix</a>.</li>
+</ol>
 
 <h2 id="visits-and-meetings">
 <a id="visits-and-meetings" class="anchor" href="#visits-and-meetings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visits and meetings</h2>
@@ -204,6 +219,9 @@ This action will contribute to the definition of the global API for the solver s
 <span class="person given-name">Guillaume</span> <span class="person sur-name">Houzeaux</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>) and <span class="person given-name">Mariano</span> <span class="person sur-name">Vázquez</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>) met INRIA team at Bordeaux, 14-15 Oct. 2016.</li>
   <li>
 <span class="person given-name">Guillaume</span> <span class="person sur-name">Houzeaux</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>) met INRIA team at Bordeaux, 24-26 Feb. 2016.</li>
+  <li>INRIA met BSC team at Barcelona, Nov. 2016.</li>
+  <li>
+<span class="person given-name">Guillaume</span> <span class="person sur-name">Houzeaux</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>) visits INRIA, Nov. 2017.</li>
 </ul>
 
 <h2 id="impact-and-publications">
@@ -217,39 +235,6 @@ This action will contribute to the definition of the global API for the solver s
 
 <ol class="bibliography"></ol>
 
-<h2 id="person-month-efforts-in-20152016">
-<a id="person-month-efforts-in-20152016" class="anchor" href="#person-month-efforts-in-20152016" aria-hidden="true"><span class="octicon octicon-link"></span></a>Person-Month efforts in 2015/2016</h2>
-
-<table class="person-months-table table table-bordered table-hover table-sm">
-  <tbody>
-    <tr>
-      <td>
-<span class="person given-name">Emmanuel</span> <span class="person sur-name">Agullo</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)</td>
-      <td>0.25 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Antoni</span> <span class="person sur-name">Artigues</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>)</td>
-      <td>2 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Guillaume</span> <span class="person sur-name">Houzeaux</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>)</td>
-      <td>2 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Pierre</span> <span class="person sur-name">Ramet</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)</td>
-      <td>0.25 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Mariano</span> <span class="person sur-name">Vázquez</span> (<abbr title="Centro Nacional de Supercomputación" class="initialism" data-toggle="tooltip">BSC</abbr>)</td>
-      <td>0.5 PM</td>
-    </tr>
-  </tbody>
-</table>
-
 <h2 id="future-plans">
 <a id="future-plans" class="anchor" href="#future-plans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future plans</h2>
 <p>We intend to complete the full integration of the Inria solvers with their current individual API in the Alya code so that scalability studies on different applications representative of Alya simulations can be performed (incompressible/compressible fluid, structure mechanics).
@@ -259,6 +244,102 @@ Hopefully some of them will reveal numerical or software features to be further 
 <a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
 
 <ol class="bibliography">
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          pichon:hal-01485507
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapsepichon:hal-01485507Bibtex" aria-expanded="false" aria-controls="collapsepichon:hal-01485507Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapsepichon:hal-01485507Abstract" aria-expanded="false" aria-controls="collapsepichon:hal-01485507Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="pichon:hal-01485507">Pichon, G., M. Faverge, P. Ramet, and J. Roman. 2017. “Reordering Strategy for Blocking Optimization in Sparse Linear Solvers.” <i>SIAM Journal on Matrix Analysis and Applications</i>, SIAM Journal on Matrix Analysis and Applications, 38 (1). Society for Industrial and Applied Mathematics: 226–48. doi:10.1137/16M1062454.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapsepichon:hal-01485507Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@article{pichon:hal-01485507,
+  title = {{Reordering Strategy for Blocking Optimization in Sparse Linear Solvers}},
+  author = {Pichon, G. and Faverge, M. and Ramet, P. and Roman, J.},
+  url = {https://hal.inria.fr/hal-01485507},
+  journal = {{SIAM Journal on Matrix Analysis and Applications}},
+  publisher = {{Society for Industrial and Applied Mathematics}},
+  series = {SIAM Journal on Matrix Analysis and Applications},
+  volume = {38},
+  number = {1},
+  pages = {226 - 248},
+  year = {2017},
+  doi = {10.1137/16M1062454},
+  keywords = {Sparse},
+  pdf = {https://hal.inria.fr/hal-01485507/file/M106245.pdf},
+  hal_id = {hal-01485507},
+  hal_version = {v2}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          pichon:hal-01502215
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapsepichon:hal-01502215Bibtex" aria-expanded="false" aria-controls="collapsepichon:hal-01502215Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapsepichon:hal-01502215Abstract" aria-expanded="false" aria-controls="collapsepichon:hal-01502215Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="pichon:hal-01502215">Pichon, G., E. Darve, M. Faverge, P. Ramet, and J. Roman. 2017. “Sparse Supernodal Solver Using Block Low-Rank Compression.” In <i>18th IEEE International Workshop on Parallel and Distributed Scientific and Engineering Computing (PDSEC 2017)</i>. Orlando, United States. <a href="https://hal.inria.fr/hal-01502215" target="_blank">https://hal.inria.fr/hal-01502215</a>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapsepichon:hal-01502215Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{pichon:hal-01502215,
+  title = {{Sparse Supernodal Solver Using Block Low-Rank Compression}},
+  author = {Pichon, G. and Darve, E. and Faverge, M. and Ramet, P. and Roman, J.},
+  url = {https://hal.inria.fr/hal-01502215},
+  booktitle = {{18th IEEE International Workshop on Parallel and Distributed Scientific and Engineering Computing (PDSEC 2017)}},
+  address = {Orlando, United States},
+  year = {2017},
+  month = jun,
+  keywords = {Sparse},
+  pdf = {https://hal.inria.fr/hal-01502215/file/blr-final.pdf},
+  hal_id = {hal-01502215},
+  hal_version = {v1}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
 <li>
 <div class="bibtex-entry-container">
   <div>
@@ -319,7 +400,7 @@ Hopefully some of them will reveal numerical or software features to be further 
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="HouzeauxEtAl2011">Houzeaux, G, R Aubry, and M Vázquez. 2011. “Extension Of Fractional Step Techniques for Incompressible Flows: The Preconditioned Orthomin(1) for the Pressure Schur Complement.” <i>Comput. &amp;Amp; Fluids</i> 44: 297–313.</span>
+      <span id="HouzeauxEtAl2011">Houzeaux, G, R Aubry, and M Vázquez. 2011. “Extension of Fractional Step Techniques for Incompressible Flows: The Preconditioned Orthomin(1) for the Pressure Schur Complement.” <i>Comput. &amp; Fluids</i> 44: 297–313.</span>
     </div>
   </div>
   <div class="collapse" id="collapseHouzeauxEtAl2011Bibtex">
@@ -361,7 +442,7 @@ Hopefully some of them will reveal numerical or software features to be further 
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="HouzeauxEtAl2009">Houzeaux, G, M Vázquez, R Aubry, and JM Cela. 2009. “A Massively Parallel Fractional Step Solver For Incompressible Flows.” <i>J. Comp. Phys</i> 228 (17): 6316–32.</span>
+      <span id="HouzeauxEtAl2009">Houzeaux, G, M Vázquez, R Aubry, and JM Cela. 2009. “A Massively Parallel Fractional Step Solver for Incompressible Flows.” <i>J. Comp. Phys</i> 228 (17): 6316–32.</span>
     </div>
   </div>
   <div class="collapse" id="collapseHouzeauxEtAl2009Bibtex">
@@ -398,10 +479,16 @@ Hopefully some of them will reveal numerical or software features to be further 
     <div class="container">
       <div class="row small">
         <div class="col-xs-6 col-sm-3">
-          <div class="nav navbar-nav">
-            <a class="nav-link" href="/about/imprint/">
-              <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
-          </div>
+          <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/imprint/">
+                <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://help.github.com/articles/github-privacy-statement/">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Privacy</span></a>
+            </li>
+          </ul>
         </div>
         <div class="col-sm-6 hidden-xs-down">
           <div class="nav navbar-nav text-xs-center">
@@ -413,7 +500,7 @@ Hopefully some of them will reveal numerical or software features to be further 
           </div>
         </div>
         <div class="col-xs-6 col-sm-3">
-          <ul class="nav navbar-nav pull-right">
+          <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io">
                 <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Sources</span></a>
@@ -430,7 +517,9 @@ Hopefully some of them will reveal numerical or software features to be further 
 </footer>
 
     <!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="/assets/main-cc560abaacc504809fd53ed1638bea5e1d3b98220e2bdc3e828b01fb7dd5ca7e.js"></script>
+<script type="text/javascript" src="/assets/main-f379c72bc0f1ca6c99205f5005786103a2b61210898a52b504597ea1e2e75917.js"></script>
+
+<!--  -->
 
   </body>
 </html>

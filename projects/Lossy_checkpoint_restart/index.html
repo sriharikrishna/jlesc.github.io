@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://jlesc.github.io/projects/Lossy_checkpoint_restart/">
 
   <link type="application/atom+xml" rel="alternate" href="https://jlesc.github.io/feed.xml" title="" />
-  <link type="text/css" rel="stylesheet" href="/assets/main-167e11ddb3cf37684b12f71844e6f57af3cc3c85c3c0db40eabf910fff2a2e09.css">
+  <link type="text/css" rel="stylesheet" href="/assets/main-1121dc6ec5d1807973ca79a9ef9ac00b1a6150a25e54d3549d42c6d793195499.css">    
 </head>
 
   <body>
@@ -58,8 +58,8 @@
   <div class="dropdown-menu">
     <a href="/research/collaboration/" class="dropdown-item">On Collaboration</a>
     <a href="/projects/" class="dropdown-item active">Projects</a>
-    <a href="/software/" class="dropdown-item">Software</a>
-    <a href="/research/visits/" class="dropdown-item">Visits</a>
+    <!-- <a href="/software/" class="dropdown-item">Software</a> -->
+    <!-- <a href="/research/visits/" class="dropdown-item">Visits</a> -->
   </div>
 </li>
 
@@ -134,11 +134,23 @@
             </span>
           
             <span class="clearfix">
-              <span class="person given-name">Jon</span> <span class="person sur-name">Calhoun</span> (<abbr title="University of Illinois at Urbana-Champaign" class="initialism" data-toggle="tooltip">UIUC</abbr>)
+              <span class="person given-name">Jon</span> <span class="person sur-name">Calhoun</span> (<abbr title="External partner" class="initialism" data-toggle="tooltip">EXT</abbr>)
             </span>
           
             <span class="clearfix">
               <span class="person given-name">Marc</span> <span class="person sur-name">Snir</span> (<abbr title="Argonne National Laboratory" class="initialism" data-toggle="tooltip">ANL</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Luc</span> <span class="person sur-name">Giraud</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Emmanuel</span> <span class="person sur-name">Agullo</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Nick</span> <span class="person sur-name">Schenkels</span> (<abbr title="Institut national de recherche en informatique et en automatique" class="initialism" data-toggle="tooltip">INRIA</abbr>)
             </span>
           
         </div>
@@ -148,7 +160,7 @@
     <li class="list-group-item row">
       <label class="col-sm-4">Status</label>
       <div class="col-sm-8">
-        <span class="project-status project-status-starting">starting</span>
+        <span class="project-status project-status-suspended">suspended</span>
       </div>
     </li>
     
@@ -161,9 +173,16 @@
           <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#research-topic-and-goals">Research topic and goals</a></li>
 <li class="toc-entry toc-h2"><a href="#results-for-20152016">Results for 2015/2016</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20162017">Results for 2016/2017</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20172018">Results for 2017/2018</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20182019">Results for 2018/2019</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20192020">Results for 2019/2020</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20202021">Results for 2020/2021</a></li>
 <li class="toc-entry toc-h2"><a href="#visits-and-meetings">Visits and meetings</a></li>
 <li class="toc-entry toc-h2"><a href="#impact-and-publications">Impact and publications</a></li>
-<li class="toc-entry toc-h2"><a href="#person-month-efforts-in-20152016">Person-Month efforts in 2015/2016</a></li>
+<li class="toc-entry toc-h3"><a href="#papers">Papers</a></li>
+<li class="toc-entry toc-h3"><a href="#funding">Funding</a></li>
+<li class="toc-entry toc-h3"><a href="#impact-on-other-projects">Impact on other projects</a></li>
 <li class="toc-entry toc-h2"><a href="#future-plans">Future plans</a></li>
 <li class="toc-entry toc-h2"><a href="#references">References</a></li>
 </ul>
@@ -176,12 +195,12 @@
 
 <p>State compression is an important technique for reducing the problem posed by the bandwidth plateauing of the HDD-based storage systems.</p>
 
-<p>The state saved by HPC executions in checkpoints is composed mostly of floating-point data (single or double precision). Two types of compressors have been developed for floating-point data. Lossless compressors keep all the initial information and try to reduce the size occupied by this information. Sophisticated lossless compression techniques may use entropy analysis, duplicate string elimination, or bit reduction, for example <a href="#LindstromETAl2006">(Lindstrom and Isenburg 2006)</a>, <a href="#IbteshamETAl2012">(Ibtesham et al. 2012)</a>. 
-The compression factor generally observed with lossless compression is 1.2 to 4 (the compressed data set is 1.2 to 4 times smaller than the original). Lossy compressors deliberately lose information in order to reduce the size of the initial data set further. Lossy compressors reach very variable compression ratios depending on the application. This could be from 3 to 4 for difficult-to-compress data sets (lossless compressors would achieve a compression ratio of 1.5 to 2 on those data sets) to x100 for easier-to-compress data sets. Lossy compressors can be error bounded or not. Lossy compressors that are not error bounded simply compress the data set as much as they can, with no guarantee on the error on each decompressed data. Their applicability is limited in HPC because users have expectations in terms of accuracy. Error bounded lossy compressors allow users to set a maximum (or relative) compression/decompression error. The maximum error is the maximum of the difference between any initial data in the data set and its decompressed version (from its lossy compressed version). The user has a guarantee of a maximum loss of information quantified by the maximum compression/decompression errors. Users will set the maximum error to match their accuracy expectations. Note that all lossy compressors keep all data points of the initial data set (none of the lossy compressors drop data points).</p>
+<p>The state saved by HPC executions in checkpoints is composed mostly of floating-point data (single or double precision). Two types of compressors have been developed for floating-point data. Lossless compressors keep all the initial information and try to reduce the size occupied by this information. Sophisticated lossless compression techniques may use entropy coding, runlengh encoding, dictionary coding for example <a href="#LindstromETAl2006">(Lindstrom and Isenburg 2006)</a>, <a href="#IbteshamETAl2012">(Ibtesham et al. 2012)</a>.
+The compression factor generally observed on scientific datasets with lossless compression is 1.2 to 2 (the compressed data set is 1.2 to 2 times smaller than the original). Lossy compressors deliberately lose information in order to reduce the size of the initial data set further. Lossy compressors reach very variable compression ratios depending on the application and the error bounds set by the users. This could be from less than 10 for difficult-to-compress data sets (lossless compressors would achieve a compression ratio of 1.5 to 2 on some extreme cases) to 100 for easier-to-compress data sets. Lossy compressors can be error bounded or not. Lossy compressors that are not error bounded simply compress the data set as much as they can, with no guarantee on the error on each decompressed data. Their applicability is limited in HPC because users have expectations in terms of accuracy. Error bounded lossy compressors provide different error controls such as absolute error and relative error bounds. Some compressors also provide statistical bounds. For example, SZ provides PSNR bound (lower). The user has a guarantee of a maximum loss of information quantified by the maximum compression/decompression errors. Users will set the error bound to match their accuracy expectations. Note that all lossy compressors keep all data points of the initial data set (none of the lossy compressors drop data points).</p>
 
-<p>Few studies have been done on checkpointing and restart from lossy compressed states <a href="#SasakiETAl2015">(Sasaki et al. 2015)</a>. 
-These studies are limited in scope by studying only one application and one type of lossy compressor: NICAM with a lossy compressor based on wavelet and quantization [Sas15] and ChaNGa with the fpzip lossy compressor <a href="#NiETAl2014">(Ni et al. 2014)</a>. 
-They already reveal two interesting points/First, checkpoints are composed of different variables that present different sensitivity to lossy compression. The correctness of the execution after restart depends on how each variable is compressed. In the cosmology simulation (ChaNGa), lossy compression of particle positions lead the execution to hang for a high compression level, while this does not happen when compressing other variable at the same level. Second, for the study of NICAM, the authors consider that an error of 1 percent on the final result is acceptable when restarting from lossy checkpoints. The rationale is that this magnitude of error is similar to those of sensor errors and model errors, while the compression factor exceeds 5.</p>
+<p>Few studies have been done on checkpointing and restart from lossy compressed states <a href="#SasakiETAl2015">(Sasaki et al. 2015)</a>.
+These studies are limited in scope by studying only one application and one type of lossy compressor: NICAM with a lossy compressor based on wavelet and quantization <a href="#SasakiETAl2015">(Sasaki et al. 2015)</a> and ChaNGa with fpzip used as a lossy compressor <a href="#NiETAl2014">(Ni et al. 2014)</a>.
+They already reveal two interesting points. First, checkpoints are composed of different variables that present different sensitivity to lossy compression. The correctness of the execution after restart depends on how each variable is compressed. In the cosmology simulation (ChaNGa), lossy compression of particle positions lead the execution to hang for a high compression level, while this does not happen when compressing other variable at the same level. Second, for the study of NICAM, the authors consider that an error of 1 percent on the final result is acceptable when restarting from lossy checkpoints. The rationale is that this magnitude of error is similar to those of sensor errors and model errors, while the compression factor exceeds 5.</p>
 
 <p>In contrary to previous research that concentrated on few applications, we focus on simple problems used by many applications and try to understand how they behave. We are exploring diffusion and advection problems. The diffusion problem simulates the heat diffusion on a one-dimensional rod. The advection problem simulates a sine wave advecting to the right with periodic boundaries.</p>
 
@@ -190,48 +209,400 @@ They already reveal two interesting points/First, checkpoints are composed of di
 
 <p>From our observations of restart from lossy checkpoints in dynamic simulations, we have observed that diffusion and advection problems are reacting differently. We are currently characterizing and formalizing this difference. We suspect that lossyness may be increased as the execution progresses: restarting from a lossy checkpoint near the beginning of the execution seems to affect much more the end results compared with restarting from a lossy checkpoint near the end of the execution. Moreover, we note that in a given variable field, some regions of the field are more chaotic than others. Some applications may not tolerate lossy compression on the entire field. But we suspect that they may tolerate lossy compression in the nonchaotic regions of the variable field.</p>
 
+<h2 id="results-for-20162017">
+<a id="results-for-20162017" class="anchor" href="#results-for-20162017" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2016/2017</h2>
+
+<p>We particularly explored an important problem: how to bound the impact of  restarting from lossy checkpoint and guarantee that this impact does not affect the application result quality. To address this problem, we established a link between the compression error and the numerical error of the application. Applications using numerical methods suffer errors from truncation and discretization. We showed that compressing checkpoint with an error lower than the numerical errors allow to reserve the quality of the application results. We also demonstrated empirically that the error introduced by restarting from lossy checkpoint can be bounded.</p>
+
+<p>Other researchers will be able to exploit the link we established between the compression error and the numerical errors to design better compression algorithms and numerical methods that tolerate better compression errors.</p>
+
+<p>An important impact of this work on other disciplines that are using numerical simulation is that they can use lossy compression for checkpoint/restart since we established and verified guidance to fix the compression error that guarantee the quality of the numerical results.</p>
+
+<p>Jon Calhoun wrote a Ph. D. manuscript and defended a Ph. D. dissertation presenting this research/results.</p>
+
+<h2 id="results-for-20172018">
+<a id="results-for-20172018" class="anchor" href="#results-for-20172018" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2017/2018</h2>
+
+<p>The paper submitted to IJHPCA on the results of lossy compression for advection and diffusion problems has been accepted for publication.</p>
+
+<h2 id="results-for-20182019">
+<a id="results-for-20182019" class="anchor" href="#results-for-20182019" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2018/2019</h2>
+
+<p>A new collaboration has started with Luc Giraud and Emmanuel Aggulo (Inria) on lossy compression for linear solvers (GMRES). The goal is to study the convergence of GMRES if lossy compression is used at each iteration or for only some iterations. The first case will allow to understand how lossy compression could be used to compress the solver data in memory. The second case will inform about the possibility to restart GMES from lossy checkpoints. The research has started, a Postdoc has been hired on the Inria side.</p>
+
+<h2 id="results-for-20192020">
+<a id="results-for-20192020" class="anchor" href="#results-for-20192020" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2019/2020</h2>
+
+<p>The first results experimental of the new collaboration were presented during the workshop at Knoxville. Nick Schenkels then visited Argonne for 2 weeks. During the two weeks we decided to focus the work on Flexible GMRES. Franck Cappello visited Bordeaux in June 2019. There were several meetings about the collaboration. Nick Schenkels visited Argonne on February 2020 for 1 week. Discussions were about the draft of a paper on the theoretical results of this collaboration. The results of the collaboration will be presented at the JLESC workshop at Bonn in April 2020.</p>
+
+<p>Two graduate students of Jon Calhoun (Robert Underwood and Tasmia Reza) spent time at Argonne. The results of their internships produced two publications. Tasmia’s paper is published at DRBSD’19. Robert’s paper is published at IPDPS’20.</p>
+
+<h2 id="results-for-20202021">
+<a id="results-for-20202021" class="anchor" href="#results-for-20202021" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2020/2021</h2>
+
+<p>The research on lossy compression for FGMRES algorithm has progressed. FGMRES requires the storage of a basis for the search space and another one for the space spanned by the residuals. We showed that the vectors spanning this search space can be compressed by looking at the combination of FGMRES and compression in the context of inexact Krylov subspace methods. This allows us to derive a bound on the normwise relative compression error in each iteration. We use this bound to formulate a number of different practical compression strategies, and validate and compare them through numerical experiments.</p>
+
 <h2 id="visits-and-meetings">
 <a id="visits-and-meetings" class="anchor" href="#visits-and-meetings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visits and meetings</h2>
 
-<p>Franck Cappello visits UIUC almost every week. We have a 30 minutes-1hour meeting almost each time.</p>
+<ul>
+  <li>Franck Cappello visits UIUC almost every week. We have a 30 minutes to 1 hour meeting almost each time.</li>
+  <li>Jon Calhoun did an internship of 11 weeks at ANL.</li>
+  <li>Franck Cappello visited Inria Bordeaux for 1 week in July 2018.</li>
+  <li>Nick Schenkels visited Argonne 2 weeks in April 2019.</li>
+  <li>Franck Cappello visited Inria Bordeaux for 1 week in July 2019.</li>
+  <li>Nick Schenkels visited Argonne 1 week in February 2020.</li>
+</ul>
 
 <h2 id="impact-and-publications">
 <a id="impact-and-publications" class="anchor" href="#impact-and-publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Impact and publications</h2>
 
-<ol class="bibliography"></ol>
+<h3 id="papers">
+<a id="papers" class="anchor" href="#papers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Papers</h3>
+<p>The paper from this collaboration submitted to IJHPCA has been accepted for publication. See <a href="#Calhoun18">(Calhoun et al. 2018)</a> and <a href="#Calhoun17">(Calhoun 2017)</a></p>
 
-<h2 id="person-month-efforts-in-20152016">
-<a id="person-month-efforts-in-20152016" class="anchor" href="#person-month-efforts-in-20152016" aria-hidden="true"><span class="octicon octicon-link"></span></a>Person-Month efforts in 2015/2016</h2>
+<p>This research continues at Argonne National Laboratory focusing on restart from lossy checkpointing for iterative numerical methods in linear algebra. A paper has been accepted at ACM HPDC 2018 on that topic <a href="#HPDC2018">(Tao et al. 2018)</a>. Another paper is under preparation for submission on lossy compression for flexible GMRES <a href="#Schenkels20">(Schenkels et al. 2020)</a>.</p>
 
-<table class="person-months-table table table-bordered table-hover table-sm">
-  <tbody>
-    <tr>
-      <td>
-<span class="person given-name">Franck</span> <span class="person sur-name">Cappello</span> (<abbr title="Argonne National Laboratory" class="initialism" data-toggle="tooltip">ANL</abbr>)</td>
-      <td>1 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Luke</span> <span class="person sur-name">Olson</span> (<abbr title="University of Illinois at Urbana-Champaign" class="initialism" data-toggle="tooltip">UIUC</abbr>)</td>
-      <td>1 PM</td>
-    </tr>
-    <tr>
-      <td>
-<span class="person given-name">Jon</span> <span class="person sur-name">Calhoun</span> (<abbr title="University of Illinois at Urbana-Champaign" class="initialism" data-toggle="tooltip">UIUC</abbr>)</td>
-      <td>3 PM</td>
-    </tr>
-  </tbody>
-</table>
+<p>A research report has been produced in 2020 and submitted to publication <a href="#agullo:hal-02572910">(Agullo et al. 2020)</a>.</p>
+
+<ol class="bibliography">
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          agullo:hal-02572910
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseagullo:hal-02572910Bibtex" aria-expanded="false" aria-controls="collapseagullo:hal-02572910Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseagullo:hal-02572910Abstract" aria-expanded="false" aria-controls="collapseagullo:hal-02572910Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="agullo:hal-02572910">Agullo, Emmanuel, Franck Cappello, Sheng Di, Luc Giraud, Xin Liang, and Nick Schenkels. 2020. “Exploring Variable Accuracy Storage through Lossy 
+Compression Techniques in Numerical Linear Algebra: a First Application 
+to Flexible GMRES.” Research Report RR-9342. Inria Bordeaux Sud-Ouest. <a href="https://hal.inria.fr/hal-02572910" target="_blank">https://hal.inria.fr/hal-02572910</a>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseagullo:hal-02572910Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@techreport{agullo:hal-02572910,
+  title = {{Exploring variable accuracy storage through lossy 
+  compression techniques in numerical linear algebra: a first application 
+  to flexible GMRES}},
+  author = {Agullo, Emmanuel and Cappello, Franck and Di, Sheng and Giraud, Luc and Liang, Xin and Schenkels, Nick},
+  url = {https://hal.inria.fr/hal-02572910},
+  type = {Research Report},
+  number = {RR-9342},
+  institution = {{Inria Bordeaux Sud-Ouest}},
+  year = {2020},
+  month = may,
+  keywords = {Mixed precision ; Lossy compression ; Flexible GMRES ; 
+  Inexact Krylov ; Compression avec perte ; Pr{\'e}cision mixte},
+  pdf = {https://hal.inria.fr/hal-02572910v2/file/RR-9342.pdf},
+  hal_id = {hal-02572910},
+  hal_version = {v2}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          Schenkels20
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseSchenkels20Bibtex" aria-expanded="false" aria-controls="collapseSchenkels20Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseSchenkels20Abstract" aria-expanded="false" aria-controls="collapseSchenkels20Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="Schenkels20">Schenkels, Nick, Emmanuel Agullo, Luc Giraud, Xin Liangy, Sheng Diy, and Franck Cappello. 2020. “Flexible Generalized Minimal Residual Method with a Compressed Search Space.”</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseSchenkels20Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@unpublished{Schenkels20,
+  author = {Schenkels, Nick and Agullo, Emmanuel and Giraud, Luc and Liangy, Xin and Diy, Sheng and Cappello, Franck},
+  title = {Flexible generalized minimal residual method with a compressed search space},
+  year = {2020},
+  note = {(to be submitted)}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          HPDC2018
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseHPDC2018Bibtex" aria-expanded="false" aria-controls="collapseHPDC2018Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseHPDC2018Abstract" aria-expanded="false" aria-controls="collapseHPDC2018Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="HPDC2018">Tao, Dingwen, Sheng Di, Xin Liang, Zizhong Chen, and Franck Cappello. 2018. “Improving Performance of Iterative Methods by Lossy Checkponting.” In <i>Proceedings of the 27th International Symposium on High-Performance
+               Parallel and Distributed Computing, HPDC 2018, Tempe, AZ, USA, June
+               11-15, 2018</i>, 52–65.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseHPDC2018Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{HPDC2018,
+  author = {Tao, Dingwen and Di, Sheng and Liang, Xin and Chen, Zizhong and Cappello, Franck},
+  title = {Improving performance of iterative methods by lossy checkponting},
+  booktitle = {Proceedings of the 27th International Symposium on High-Performance
+                 Parallel and Distributed Computing, {HPDC} 2018, Tempe, AZ, USA, June
+                 11-15, 2018},
+  pages = {52--65},
+  year = {2018}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          Calhoun18
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseCalhoun18Bibtex" aria-expanded="false" aria-controls="collapseCalhoun18Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseCalhoun18Abstract" aria-expanded="false" aria-controls="collapseCalhoun18Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="Calhoun18">Calhoun, Jon, Franck Cappello, Luke N. Olson, Marc Snir, and William D. Gropp. 2018. “Exploring the Feasibility of Lossy Compression for PDE Simulations.” <i>Int. J. High Perform. Comput. Appl.</i> 27. Sage Publications, Inc.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseCalhoun18Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@article{Calhoun18,
+  author = {Calhoun, Jon and Cappello, Franck and Olson, Luke N. and Snir, Marc and Gropp, William D.},
+  journal = {Int. J. High Perform. Comput. Appl.},
+  publisher = {Sage Publications, Inc.},
+  title = {Exploring the Feasibility of Lossy Compression for PDE Simulations},
+  volume = {27},
+  year = {2018}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          Calhoun17
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseCalhoun17Bibtex" aria-expanded="false" aria-controls="collapseCalhoun17Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseCalhoun17Abstract" aria-expanded="false" aria-controls="collapseCalhoun17Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="Calhoun17">Calhoun, Jon. 2017. “From Detection to Optimization: Impact of Soft Errors on High-Performance Computing Applications.” <i>Ph. D. Manuscript: <a href="Https://Www.ideals.illinois.edu/Handle/2142/98379" target="_blank">Https://Www.ideals.illinois.edu/Handle/2142/98379</a></i>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseCalhoun17Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@unpublished{Calhoun17,
+  author = {Calhoun, Jon},
+  journal = {Ph. D. Manuscript: https://www.ideals.illinois.edu/handle/2142/98379},
+  title = {From detection to optimization: impact of soft errors on high-performance computing applications},
+  year = {2017}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+</ol>
+
+<h3 id="funding">
+<a id="funding" class="anchor" href="#funding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Funding</h3>
+<p>The results of this project motivated the submission of the <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1617488&amp;HistoricalAwards=false">NSF Aletheia project</a> that has been awarded and is funded for 3 years.</p>
+
+<p>Funded by the NSF Aletheia project, a Ph. D. student (Wang Chen) at UIUC is exploring how to detect corruption in lossy compressed results (e.g. checkpoints) of numerical simulations.</p>
+
+<p>Another student is funded on the Aletheia project on the Argonne side. Sihuan Li from U.C. Riverside is doing a long term internship at Argonne on making lossy compression tolerant to SDC.</p>
+
+<p>Inria postdoc funding for 16 months: Nick Schenkels</p>
+
+<h3 id="impact-on-other-projects">
+<a id="impact-on-other-projects" class="anchor" href="#impact-on-other-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Impact on other projects</h3>
+
+<p>The team of Jon Calhoun at Clemson University is continuing the research on this topic. They are exploring how lossy compression affect optimal checkpoint intervals and how the nature of the compression error affect the stability of numerical methods.</p>
+
+<p>This project also led to discussions with the ECP NWCHEMeX team that is developing a new version of the quantum chemistry code NWCHEM for exascale. The new version of the code will use lossy checkpointing to reduce as much as possible the fault tolerance overhead.</p>
 
 <h2 id="future-plans">
 <a id="future-plans" class="anchor" href="#future-plans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future plans</h2>
 
-<p>Jon Calhoun will spend the summer at ANL with Franck Cappello for an internship.
-A paper is in preparation for a submission in a conference with a deadline in the 1/2 half of 2016.</p>
+<p>Through the collaboration with Luc Giraud, we hope to make a formal link between the numerical and compression errors.</p>
 
 <h2 id="references">
 <a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
 <ol class="bibliography">
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          UnderwoodEtAl2020
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseUnderwoodEtAl2020Bibtex" aria-expanded="false" aria-controls="collapseUnderwoodEtAl2020Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseUnderwoodEtAl2020Abstract" aria-expanded="false" aria-controls="collapseUnderwoodEtAl2020Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="UnderwoodEtAl2020">Underwood, Robert, Jon Calhoun, Sheng Di, and Franck Cappello. 2020. “FRaZ: A Generic High-Fidelity Fixed-Ratio Lossy Compression Framework For
+      Scientific Data.” In <i>2020 IEEE International Parallel and Distributed Processing Symposium,
+               IPDPS 2020, New Orleans, USA, May 18-22, 2020</i>. IEEE.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseUnderwoodEtAl2020Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{UnderwoodEtAl2020,
+  author = {Underwood, Robert and Calhoun, Jon and Di, Sheng and Cappello, Franck},
+  title = {FRaZ: A Generic High-Fidelity Fixed-Ratio Lossy Compression Framework for
+        Scientific Data},
+  booktitle = {2020 {IEEE} International Parallel and Distributed Processing Symposium,
+                 {IPDPS} 2020, New Orleans, USA, May 18-22, 2020},
+  pages = {},
+  publisher = {{IEEE}},
+  year = {2020},
+  url = {}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          RezaEtAl2019
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseRezaEtAl2019Bibtex" aria-expanded="false" aria-controls="collapseRezaEtAl2019Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseRezaEtAl2019Abstract" aria-expanded="false" aria-controls="collapseRezaEtAl2019Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="RezaEtAl2019">Reza, Tasmia, Jon Calhoun, Kristopher Keipert, Sheng Di, and Franck Cappello. 2019. “ Analyzing the Performance and Accuracy of Lossy Checkpointing on Sub-Iteration 
+      of NWChem.” In <i>2019 IEEE/ACM 5th International Workshop on Data Analysis and Reduction for Big 
+      Scientific Data (DRBSD)</i>.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseRezaEtAl2019Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{RezaEtAl2019,
+  author = {Reza, Tasmia and Calhoun, Jon and Keipert, Kristopher and Di, Sheng and Cappello, Franck},
+  title = { Analyzing the Performance and Accuracy of Lossy Checkpointing on Sub-Iteration 
+        of NWChem},
+  booktitle = {2019 IEEE/ACM 5th International Workshop on Data Analysis and Reduction for Big 
+        Scientific Data (DRBSD)},
+  year = {2019},
+  volume = {},
+  number = {},
+  pages = {},
+  doi = {},
+  issn = {},
+  month = nov
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
 <li>
 <div class="bibtex-entry-container">
   <div>
@@ -252,7 +623,7 @@ A paper is in preparation for a submission in a conference with a deadline in th
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="SasakiETAl2015">Sasaki, N., K. Sato, T. Endo, and S. Matsuoka. 2015. “Exploration Of Lossy Compression for Application-Level Checkpoint/Restart.” In <i>Parallel And Distributed Processing Symposium (IPDPS), 2015 IEEE International</i>, 914–22.</span>
+      <span id="SasakiETAl2015">Sasaki, N., K. Sato, T. Endo, and S. Matsuoka. 2015. “Exploration of Lossy Compression for Application-Level Checkpoint/Restart.” In <i>Parallel and Distributed Processing Symposium (IPDPS), 2015 IEEE International</i>, 914–22.</span>
     </div>
   </div>
   <div class="collapse" id="collapseSasakiETAl2015Bibtex">
@@ -293,7 +664,7 @@ A paper is in preparation for a submission in a conference with a deadline in th
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="NiETAl2014">Ni, Xiang, Tanzima Islam, Kathryn Mohror, Adam Moody, and Laxmikant V Kale. 2014. “Lossy Compression for Checkpointing: Fallible or Feasible?” In <i>International Conference For High Performance Computing, Networking, Storage and Analysis (SC)</i>.</span>
+      <span id="NiETAl2014">Ni, Xiang, Tanzima Islam, Kathryn Mohror, Adam Moody, and Laxmikant V Kale. 2014. “Lossy Compression for Checkpointing: Fallible or Feasible?” In <i>International Conference for High Performance Computing, Networking, Storage and Analysis (SC)</i>.</span>
     </div>
   </div>
   <div class="collapse" id="collapseNiETAl2014Bibtex">
@@ -332,7 +703,7 @@ A paper is in preparation for a submission in a conference with a deadline in th
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="IbteshamETAl2012">Ibtesham, Dewan, Dorian Arnold, Kurt B. Ferreira, and Patrick G. Bridges. 2012. “On The Viability of Checkpoint Compression for Extreme Scale Fault Tolerance.” In <i>Proceedings Of the 2011 International Conference on Parallel Processing - Volume 2</i>, 302–11. Euro-Par’11. Berlin, Heidelberg: Springer-Verlag. doi:10.1007/978-3-642-29740-3_34.</span>
+      <span id="IbteshamETAl2012">Ibtesham, Dewan, Dorian Arnold, Kurt B. Ferreira, and Patrick G. Bridges. 2012. “On the Viability of Checkpoint Compression for Extreme Scale Fault Tolerance.” In <i>Proceedings of the 2011 International Conference on Parallel Processing - Volume 2</i>, 302–11. Euro-Par’11. Berlin, Heidelberg: Springer-Verlag. doi:10.1007/978-3-642-29740-3_34.</span>
     </div>
   </div>
   <div class="collapse" id="collapseIbteshamETAl2012Bibtex">
@@ -382,7 +753,7 @@ A paper is in preparation for a submission in a conference with a deadline in th
     </div>
 
     <div class="bibtex-ref-entry">
-      <span id="LindstromETAl2006">Lindstrom, P., and M. Isenburg. 2006. “Fast And Efficient Compression of Floating-Point Data.” <i>IEEE Transactions On Visualization and Computer Graphics</i> 12 (5): 1245–50.</span>
+      <span id="LindstromETAl2006">Lindstrom, P., and M. Isenburg. 2006. “Fast and Efficient Compression of Floating-Point Data.” <i>IEEE Transactions on Visualization and Computer Graphics</i> 12 (5): 1245–50.</span>
     </div>
   </div>
   <div class="collapse" id="collapseLindstromETAl2006Bibtex">
@@ -420,10 +791,16 @@ A paper is in preparation for a submission in a conference with a deadline in th
     <div class="container">
       <div class="row small">
         <div class="col-xs-6 col-sm-3">
-          <div class="nav navbar-nav">
-            <a class="nav-link" href="/about/imprint/">
-              <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
-          </div>
+          <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/imprint/">
+                <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://help.github.com/articles/github-privacy-statement/">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Privacy</span></a>
+            </li>
+          </ul>
         </div>
         <div class="col-sm-6 hidden-xs-down">
           <div class="nav navbar-nav text-xs-center">
@@ -435,7 +812,7 @@ A paper is in preparation for a submission in a conference with a deadline in th
           </div>
         </div>
         <div class="col-xs-6 col-sm-3">
-          <ul class="nav navbar-nav pull-right">
+          <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
               <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io">
                 <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Sources</span></a>
@@ -452,7 +829,9 @@ A paper is in preparation for a submission in a conference with a deadline in th
 </footer>
 
     <!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="/assets/main-cc560abaacc504809fd53ed1638bea5e1d3b98220e2bdc3e828b01fb7dd5ca7e.js"></script>
+<script type="text/javascript" src="/assets/main-f379c72bc0f1ca6c99205f5005786103a2b61210898a52b504597ea1e2e75917.js"></script>
+
+<!--  -->
 
   </body>
 </html>

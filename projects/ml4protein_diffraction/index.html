@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>JLESC &mdash; Machine Learning-driven Predictive Analysis of Protein Diffraction Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Joint Laboratory for Extreme Scale Computing includes researchers from the French National Institute for Research in Computer Science and Control (INRIA), the University of Illinois at Urbana-Champaign’s Center for Extreme-Scale Computation, the National Center for Supercomputing Applications, Argonne National Laboratory, Barcelona Supercomputing Center, Julich Supercomputing Center and Riken/AICS. The Joint Lab is part of Parallel@Illinois.
+">
+  <link rel="canonical" href="https://jlesc.github.io/projects/ml4protein_diffraction/">
+
+  <link type="application/atom+xml" rel="alternate" href="https://jlesc.github.io/feed.xml" title="" />
+  <link type="text/css" rel="stylesheet" href="/assets/main-1121dc6ec5d1807973ca79a9ef9ac00b1a6150a25e54d3549d42c6d793195499.css">    
+</head>
+
+  <body>
+    <header>
+  <noscript>
+    <div class="container-fluid">
+      <div class="card card-block card-danger row">
+        <p class="card-text text-sm-center">
+          You have Javascript disabled. This website might not work as intended and will look not as good as it can.
+          <br />
+          Please activate Javascript for this website. We are not loading content from other domains.
+        </p>
+      </div>
+    </div>
+  </noscript>
+  <nav>
+    <div class="navbar navbar-fixed-top navbar-dark bg-inverse" role="navigation">
+      <div class="container">
+        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#CollapsingNavbar">
+          <i class="fa fa-bars fa-fw"></i>
+        </button>
+
+        <a class="navbar-brand" href="/">JLESC</a>
+
+        <div class="collapse navbar-toggleable-sm" id="CollapsingNavbar">
+          <ul class="nav navbar-nav">
+            <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+  <div class="dropdown-menu">
+    <a href="/about/" class="dropdown-item">JLESC</a>
+    <a href="/about/partners/" class="dropdown-item">Partners</a>
+    <a href="/about/people/" class="dropdown-item">People</a>
+    <a href="/about/grants/" class="dropdown-item">Grants</a>
+  </div>
+</li>
+
+            <li class="nav-item">
+              <a href="/news/" class="nav-link">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/events/">Events</a>
+            </li>
+            <li class="nav-item dropdown active">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Research</a>
+  <div class="dropdown-menu">
+    <a href="/research/collaboration/" class="dropdown-item">On Collaboration</a>
+    <a href="/projects/" class="dropdown-item active">Projects</a>
+    <!-- <a href="/software/" class="dropdown-item">Software</a> -->
+    <!-- <a href="/research/visits/" class="dropdown-item">Visits</a> -->
+  </div>
+</li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/references/">References</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+              <a class="nav-link"
+                 href="https://github.com/JLESC/jlesc.github.io/wiki"
+                 target="_blank"
+                 title="How to contribute"
+                 data-toggle="tooltip"
+                 data-placement="left">
+                <i class="fa fa-fw fa-book"></i>
+                How To
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      <div class="container">
+        <div class="post post-project">
+  <article class="post-content">
+    <div class="row">
+      <header class="col-sm-12 post-header">
+        <h1 class="pull-left">Machine Learning-driven Predictive Analysis of Protein Diffraction Data</h1>
+      </header>
+    </div>
+    <div class="row">
+      <aside class="col-lg-5 col-sm-12 pull-lg-right collapse in" id="meta-aside">
+        <section class="group-meta card">
+  <div class="card-header">
+    Project Profile
+  </div>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item row">
+      <label class="col-sm-4">Topics</label>
+      <div class="col-sm-8">
+        
+          <span class="clearfix">
+            <span class="topic topic-title">Apps & Mini-Apps</span>
+          </span>
+        
+      </div>
+    </li>
+    
+      <li class="list-group-item row">
+        <label class="col-sm-4">Keywords</label>
+        <div class="col-sm-8">
+          
+            <span class="clearfix">machine learning, protein folding</span>
+          
+        </div>
+      </li>
+    
+    
+    
+      <li class="list-group-item row">
+        <label class="col-sm-4">Members</label>
+        <div class="col-sm-8">
+          
+            <span class="clearfix">
+              <span class="person given-name">Michela</span> <span class="person sur-name">Taufer</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+              <span class="pull-right">
+                <a title="Project Head" data-toggle="tooltip"><i class="fa fa-graduation-cap fa-fw"></i></a>
+              </span>
+            </span>
+          
+          
+            <span class="clearfix">
+              <span class="person given-name">Florence</span> <span class="person sur-name">Tama</span> (<abbr title="RIKEN Center for Computational Science" class="initialism" data-toggle="tooltip">R-CCS</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Piotr</span> <span class="person sur-name">Luszczek</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Osamu</span> <span class="person sur-name">Miyashita</span> (<abbr title="RIKEN Center for Computational Science" class="initialism" data-toggle="tooltip">R-CCS</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Paula</span> <span class="person sur-name">Olaya Garcia</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Silvina</span> <span class="person sur-name">Caino-Lores</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Georgia</span> <span class="person sur-name">Channing</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+            </span>
+          
+            <span class="clearfix">
+              <span class="person given-name">Ria</span> <span class="person sur-name">Patel</span> (<abbr title="University of Tennessee" class="initialism" data-toggle="tooltip">UTK</abbr>)
+            </span>
+          
+        </div>
+      </li>
+    
+    
+    <li class="list-group-item row">
+      <label class="col-sm-4">Status</label>
+      <div class="col-sm-8">
+        <span class="project-status project-status-running">running</span>
+      </div>
+    </li>
+    
+  </ul>
+</section>
+        <section class="card" id="toc">
+          <div class="card-header">
+            Table of Contents
+          </div>
+          <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#research-topic-and-goals">Research topic and goals</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20202021">Results for 2020/2021</a></li>
+<li class="toc-entry toc-h2"><a href="#results-20212022">Results 2021/2022</a></li>
+<li class="toc-entry toc-h2"><a href="#results-20222023">Results 2022/2023</a></li>
+<li class="toc-entry toc-h2"><a href="#results-for-20232024">Results for 2023/2024</a></li>
+<li class="toc-entry toc-h2"><a href="#visits-and-meetings">Visits and meetings</a></li>
+<li class="toc-entry toc-h2"><a href="#impact-and-publications">Impact and publications</a></li>
+<li class="toc-entry toc-h2"><a href="#future-plans">Future plans</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
+</ul>
+        </section>
+      </aside>
+      <div class="col-lg-7 col-sm-12 pull-lg-left content" id="main-content">
+        
+        <h2 id="research-topic-and-goals">
+<a id="research-topic-and-goals" class="anchor" href="#research-topic-and-goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Research topic and goals</h2>
+
+<p>A protein’s structure determines its function. Different proteins have different structures; proteins in the same family share similar substructures and may share similar functions. Additionally, one protein may exhibit several structures (or conformations). Identifying different proteins and differentiating between their different conformations is a task that could help solve many complex problems, such as determining the cause of diseases and designing drugs. X-ray Free Electron Laser (XFEL) beams are used to create diffraction patterns (images) that can reveal protein structure (and function). The translation between diffraction patterns in the XFEL images and protein structures is non-trivial.</p>
+
+<p>Three features are embedded in an image and can be captured by ML methods: the orientations of a protein conformation, the conformations of a folded protein, and the different conformations of different proteins. This collaboration between UTK and RIKEN aims to develop an ML-driven workflow integrating a suite of ML methods (from simple k-nearest neighbors and random forest to more complex neural networks) to capture orientations, conformations, and types of proteins from XFEL images. Our ML-driven workflow will build on top of open-source software and open-access datasets. The workflow will be packaged into a tool that will allow us to study and understand the impact of different ML methods and numerical precisions on prediction accuracy, power consumption, and performance for synthetic protein datasets (from simulations) and real XFEL images, as our tool is validated towards noisy, simulated datasets. The collaborators will use the tool at RIKEN for protein discovery.</p>
+
+<h2 id="results-for-20202021">
+<a id="results-for-20202021" class="anchor" href="#results-for-20202021" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2020/2021</h2>
+<p>In Year 1, we presented XPSI (XFEL-based Protein Structure Identifier) that is a framework relying on ML methods (e.g., autoencoder and kNN) to capture critical information from X-Ray images. The information allows the identification of properties, such as spatial orientation, protein conformation, and different protein types from the diffraction patterns.</p>
+
+<p>Our framework processes diffraction images (or patterns) through an autoencoder that captures critical information and produces a tensor representation of each image. The autoencoder consists of an encoder and a decoder. The encoder has three convolutional filters and downsampling layers, and the decoder has the reverse structure of the encoder. The framework uses the new latent space to train and validate traditional ML models such as k-nearest neighbors (kNN). We use a kNN-angle regressor to predict the orientation and two kNN-classifiers to predict different protein conformations and types.</p>
+
+<p>We explored increasingly complex protein diffraction imaging datasets: four imaging resolutions and two protein types (i.e., EF2 and ribosome) with 4 and 2 conformations, respectively. Each conformation has the spatial orientation represented by the set of the three Euler angles.</p>
+
+<p>We quantified the classification accuracy and performance of XPSI. We observed that as we increased the resolution of the images, we obtained an overall orientation prediction error below 10 degrees for the three angles; a conformation accuracy prediction of 93% for the four EF2’s conformations 1n0u, 1n0vc, 9a, and bc; and an accuracy of 100% when differentiating between the  EF2 and ribosome.</p>
+
+<h2 id="results-20212022">
+<a id="results-20212022" class="anchor" href="#results-20212022" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results 2021/2022</h2>
+
+<p>In Year 2, we added the prediction of the final property required to identify a protein structure which is the protein type. Moreover, we designed a solution to overcome symmetry challenges observed when predicting the third rotational angle (in Year 1). Our solution changes the range of the third angle from 0 to 360 degrees to 0 to 180 degrees without affecting the science behind it. Our framework can now accurately identify the predictions, including the three orientation angles, the different conformations, and the protein type. To validate the accuracy, we tested XPSI on a dataset of images from two different proteins (i.e., EF2 and ribosome) with two conformations each (i.e., 1n0u and 1n0vc for EF2 and 9a and bc for ribosome), and two imaging resolutions (high and low). For the high image resolution, we obtained an orientation prediction error of up to 10 degrees, a difference in the predicted third angle of up to 5 degrees, a conformation accuracy prediction of 92%, and a 100% of protein type accuracy prediction. We also released a Jupyter Notebook for the shareability and portability of our framework.</p>
+
+<p>In Year 3, we will test the framework with a more diverse dataset (i.e., three or more protein types with two or more conformations each). We will compare our framework with a traditional XFEL slice matching approach used for 3D reconstruction.</p>
+
+<h2 id="results-20222023">
+<a id="results-20222023" class="anchor" href="#results-20222023" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results 2022/2023</h2>
+
+<p>In Year 3, we demonstrated the capabilities of our XPSI (X-ray Free Electron Laser-based Protein Structure Identifier) framework by quantifying its accuracy when using challenging datasets and combinations of protein’s structural properties. We observed these three key findings:</p>
+<ol>
+  <li>Our framework predicts orientation despite symmetry in the diffraction patterns for the EF2 protein with an error degree and Psi difference within 10 degrees for the 95th percentile of the testing dataset for high beam intensity.</li>
+  <li>The framework predicts confirmations with an accuracy of 97%, even when the structural shapes of the conformations are nearly indistinguishable.</li>
+  <li>Our framework correctly differentiates (with 100% accuracy ) between two protein types (EF2 and ribosome) in a broad and realistic set of diffraction patterns with multiple conformations and orientations.</li>
+</ol>
+
+<p>We delivered a Jupyter Notebook implementing the XPSI framework, which can be found at: https://github.com/TauferLab/XPSI.</p>
+
+<p>Neural networks (NNs) are gaining momentum in high-throughput scientific workflows; they inspired a new direction for this project. We expanded the framework to use a multi-objective Neural Architecture Search (NAS), NSGA-Net, to search for highly accurate NNs capable of predicting protein structural properties while optimizing resource efficiency (i.e., minimizing FLoating-point Operations Per Second or FLOPS). We define a domain-agnostic methodology to generate NNs with the support of NSGA-Net, select promising NNs that balance accuracy and FLOPS usage, and refine a subset of NNs to curate networks suitable for efficient data analysis. We apply this methodology to our protein diffraction use case. Preliminary results show NNs that efficiently classify the conformation of proteins with a final accuracy of 97.7% or higher and using only 187 FLOPS.</p>
+
+<p>In Year 4, we will work on the following:</p>
+<ul>
+  <li>We will complete the prediction of the entire property set (i.e., orientation, conformation, and protein type) using near-optimal NNs.</li>
+  <li>We will make the advanced framework available through open-source software, with Jupyter notebook tutorials to increase access to our technology.</li>
+  <li>We will compare our framework with a traditional XFEL slice matching approach used for 3D reconstruction and follow the premises of orientation prediction through multiple and time-consuming iterations.</li>
+</ul>
+
+<h2 id="results-for-20232024">
+<a id="results-for-20232024" class="anchor" href="#results-for-20232024" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results for 2023/2024</h2>
+<p>In the 2023-2024 period, our group made significant strides in the field of computational biology by developing A4NN, a highly efficient, composable workflow designed to enhance Neural Architecture Search (NAS) for predicting various protein properties (i.e., orientation, conformation, and protein type) using protein diffraction patterns across different beam intensities (i.e., low, medium, and high). Our workflow’s performance was rigorously evaluated against the standalone NAS approach, specifically NSGA-Net, to find models with high validation accuracy and low computational demand (FLOPS). The evaluation yielded impressive results:</p>
+
+<p>At low beam intensity, A4NN achieved 99.8% accuracy under 650 FLOPS, compared to NSGA-Net’s 98.1% accuracy with approximately 650 FLOPS.
+Our workflow reached 100% accuracy for medium beam intensity using below 500 FLOPS, surpassing NSGA-Net’s 99% accuracy with around 700 FLOPS.
+Both A4NN and NSGA-Net recorded a 99.9% accuracy at high beam intensity, but A4NN required less than 450 FLOPS, matching NSGA-Net’s computational cost.</p>
+
+<p>These results underscore A4NN’s superiority in optimizing accuracy and efficiency across varying experimental conditions. Moreover, our workflow demonstrated a remarkable capacity to cut down training time and resource usage by up to 37% and reduce the number of training epochs by up to 38%, all while achieving a prediction accuracy of 100% in classifying protein conformations.</p>
+
+<p>Complementing these technical achievements, our team has provided reproducibility artifacts available on GitHub, including detailed metadata and outcomes from executing our workflow across various protein diffraction datasets and GPU configurations. This commitment to transparency and replicability underscores our approach’s robustness and the potential for A4NN to be deployed across a broader spectrum of NAS applications and datasets, showcasing its adaptability and the extensive groundwork laid for future advancements in the classification of protein conformations.</p>
+
+<h2 id="visits-and-meetings">
+<a id="visits-and-meetings" class="anchor" href="#visits-and-meetings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visits and meetings</h2>
+<p>Taufer will meet Tama and Miyashita during her visit at RIKEN on Deb 6-9 for the DOE/MEXT and R-CCS meeting.
+During the summer of 2023, Ria Patel (First-year graduate student in Taufer’s group) interned at RIKEN, Japan, working with the Riken project members at that institution: Florence Tama and Osamu Miyashita. 
+Michela Taufer and Georgia Channing attended France’s Joint Laboratory for Extreme Scale Computing (JLESC) meeting at INRIA Bordeaux from March 21 to 23, 2023.</p>
+
+<h2 id="impact-and-publications">
+<a id="impact-and-publications" class="anchor" href="#impact-and-publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Impact and publications</h2>
+<ul>
+  <li>Georgia Channings dedicated two years to this project with the University of Tennessee, Knoxville (UTK) team. In spring 2023, she applied for graduate fellowships. Her applications were successful, earning her three prestigious ones: the NSF Graduate Fellowship, which offers four years of support for students at U.S. institutions; an Oxford Fellowship; and a Cambridge Fellowship, both in the UK. Ultimately, she accepted the Oxford Fellowship and is currently a graduate student there.</li>
+  <li>The project’s outcomes have been documented in a comprehensive paper accepted and published at the ICPP 2023 conference: <a href="#ChanningEtAl2023">(Channing, Georgia and Patel, Ria and Olaya, Paula and Rorabaugh, Ariel and Miyashita, Osamu and Caino-Lores, Silvina and Schuman, Catherine and Tama, Florence and Taufer, Michela 2023)</a>. Michela Taufer and Georgia Channing participated in the ICPP conferences. At the event, Georgia took the stage to present the paper and also showcased a poster that detailed the same findings:</li>
+  <li>Additionally, Michela Taufer was a featured speaker at the 6th RCCS Symposium. You can find more information about the symposium here: https://www.r-ccs.riken.jp/R-CCS-Symposium/2024/. During her talk, “Analytics4NN: Accelerating Neural Architecture Search through Modeling and High-Performance Computing Techniques,” she shared the insights gained from this project.</li>
+  <li>A paper at IEEE e-Science 2022 <a href="#OlayaEtAl2022">(Olaya et al. 2022)</a>
+</li>
+  <li>A short paper at IEEE e-Science 2022 <a href="#PatelEtAl2022">(Patel et al. 2022)</a>
+</li>
+  <li>Talk: 14th Joint Laboratory for Extreme Scale Computing (JLESC) Workshop, 2022. Project Talk: Machine Learning-driven Predictive Analysis of Protein Diffraction Data.</li>
+  <li>Talk: 14th Joint Laboratory for Extreme Scale Computing (JLESC) Workshop, 2022. Short Talk: Methods, Workflows, and Data Commons for Reducing Training Costs in Neural Architecture Search on High-Performance Computing Platforms</li>
+  <li>Talk: 13th Joint Laboratory for Extreme Scale Computing (JLESC) Workshop, 2021. Short Talk: XPSI: XFEL-based Protein Structure Identifier.</li>
+  <li>Talk: 12th Joint Laboratory for Extreme Scale Computing (JLESC) Workshop, 2021. Short Talk: XPSI: XFEL-based Protein Structure Identifier.</li>
+  <li>Poster: Paula Olaya, Michael R. Wyatt II, Silvina Caino-Lores, Florence Tama, Osamu Miyashita, Piotr Luszczek, and Michela Taufer, “XPSI: X-ray Free Electron Laser based Protein Structure Identifier,” ACM/IEEE International Conference for High Performance Computing, Networking, Storage and Analysis, Research Poster, Atlanta, GA, 2020.</li>
+  <li>Talk: 11th Joint Laboratory for Extreme Scale Computing (JLESC) Workshop, 2020. Short Talk: XPSI: XFEL-based Protein Structure Identifier.</li>
+  <li><a href="https://github.com/TauferLab/XPSI">Github Repository</a></li>
+  <li>Poster: Georgia Channing. Composable Workflow for Accelerating Neural Architecture Search Using In Situ Analytics for Protein Classification. Poster at the 52nd International Conference on Parallel Processing (ICPP ‘23). Salt Lake City, Utah, US. August 7-10, 2023.</li>
+  <li>Talk: Michela Taufer. Analytics4NN: Accelerating Neural Architecture Search through Modeling and High-Performance Computing Techniques. Talk at the  6th R-CCS International Symposium. Jan. 29-30 2024, Kobe, Japan.</li>
+  <li>Talk: Georgia Channing. Generating Efficient Neural Networks for Protein Diffraction Data. Talk at the 15th JLESC Workshop. March 21-23, 2023, INRIA, Bordeaux, France.</li>
+</ul>
+
+<p><strong>Reproducibility badges:</strong>
+We delivered two ACM reproducibility artifacts (artifact available and artifact evaluated-functional) for our work in the ICPP paper that contain metadata and results from our workflow executions on several protein diffraction datasets for different GPU distributions – (https://github.com/TauferLab/Reproducibility_A4NN_ICPP23)</p>
+
+<ol class="bibliography">
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          ChanningEtAl2023
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseChanningEtAl2023Bibtex" aria-expanded="false" aria-controls="collapseChanningEtAl2023Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseChanningEtAl2023Abstract" aria-expanded="false" aria-controls="collapseChanningEtAl2023Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="ChanningEtAl2023">Channing, Georgia and Patel, Ria and Olaya, Paula and Rorabaugh, Ariel and Miyashita, Osamu and Caino-Lores, Silvina and Schuman, Catherine and Tama, Florence and Taufer, Michela. 2023. “Composable Workflow for Accelerating Neural Architecture Search Using In Situ Analytics for Protein Classification.” In <i>Proceedings of the 52nd International Conference on Parallel Processing</i>, 1. ICPP ’23. New York, NY, USA: Association for Computing Machinery. doi:10.1145/3605573.3605636.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseChanningEtAl2023Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{ChanningEtAl2023,
+  author = {{Channing, Georgia and Patel, Ria and Olaya, Paula and Rorabaugh, Ariel and Miyashita, Osamu and Caino-Lores, Silvina and Schuman, Catherine and Tama, Florence and Taufer, Michela}},
+  title = {{Composable Workflow for Accelerating Neural Architecture Search Using In Situ Analytics for Protein Classification}},
+  year = {2023},
+  isbn = {9798400708435},
+  publisher = {{Association for Computing Machinery}},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3605573.3605636},
+  doi = {10.1145/3605573.3605636},
+  booktitle = {{Proceedings of the 52nd International Conference on Parallel Processing}},
+  pages = {1},
+  numpages = {1},
+  keywords = {Deep learning, Early termination, Neural architecture search, Neural networks, Predictive modeling, Protein diffraction},
+  location = {Salt Lake City, UT, USA},
+  series = {ICPP '23}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          OlayaEtAl2022
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseOlayaEtAl2022Bibtex" aria-expanded="false" aria-controls="collapseOlayaEtAl2022Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapseOlayaEtAl2022Abstract" aria-expanded="false" aria-controls="collapseOlayaEtAl2022Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="OlayaEtAl2022">Olaya, Paula, Silvina Caíno-Lores, Vanessa Lama, Ria Patel, Ariel Keller Rorabaugh, Osamu Miyashita, Florence Tama, and Michela Taufer. 2022. “Identifying Structural Properties of Proteins from X-Ray Free Electron Laser Diffraction Patterns.” In <i>2022 IEEE 18th International Conference on e-Science (e-Science)</i>, 21–31. doi:10.1109/eScience55777.2022.00017.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseOlayaEtAl2022Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{OlayaEtAl2022,
+  author = {Olaya, Paula and Caíno-Lores, Silvina and Lama, Vanessa and Patel, Ria and Rorabaugh, Ariel Keller and Miyashita, Osamu and Tama, Florence and Taufer, Michela},
+  booktitle = {2022 IEEE 18th International Conference on e-Science (e-Science)},
+  title = {Identifying Structural Properties of Proteins from X-ray Free Electron Laser Diffraction Patterns},
+  year = {2022},
+  volume = {},
+  number = {},
+  pages = {21-31},
+  doi = {10.1109/eScience55777.2022.00017}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li>
+<div class="bibtex-entry-container">
+  <div>
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          PatelEtAl2022
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapsePatelEtAl2022Bibtex" aria-expanded="false" aria-controls="collapsePatelEtAl2022Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled data-toggle="collapse" data-target="#collapsePatelEtAl2022Abstract" aria-expanded="false" aria-controls="collapsePatelEtAl2022Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry">
+      <span id="PatelEtAl2022">Patel, Ria, Ariel Keller Rorabaugh, Paula Olaya, Silvina Caino-Lores, Georgia Channing, Catherine Schuman, Osamu Miyashita, Florence Tama, and Michela Taufer. 2022. “A Methodology to Generate Efficient Neural Networks for Classification of Scientific Datasets.” In <i>2022 IEEE 18th International Conference on e-Science (e-Science)</i>, 389–90. doi:10.1109/eScience55777.2022.00052.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapsePatelEtAl2022Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{PatelEtAl2022,
+  author = {Patel, Ria and Rorabaugh, Ariel Keller and Olaya, Paula and Caino-Lores, Silvina and Channing, Georgia and Schuman, Catherine and Miyashita, Osamu and Tama, Florence and Taufer, Michela},
+  booktitle = {2022 IEEE 18th International Conference on e-Science (e-Science)},
+  title = {A Methodology to Generate Efficient Neural Networks for Classification of Scientific Datasets},
+  year = {2022},
+  volume = {},
+  number = {},
+  pages = {389-390},
+  doi = {10.1109/eScience55777.2022.00052}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+</ol>
+
+<h2 id="future-plans">
+<a id="future-plans" class="anchor" href="#future-plans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Future plans</h2>
+<p>Moving forward, we focus on identifying the characteristics of effective neural network (NN) designs and making them accessible through an interactive software tool. We will evaluate an NN-based approach by applying it across various established neural architecture search (NAS) methods to determine its effectiveness in predicting protein structures. We will incorporate these insights into our software platform, alongside a Jupyter notebook, to facilitate the broader application of our neural networks in analyzing XFEL (X-ray Free Electron Laser) images. Our software will feature an advanced output layer capable of delivering regression and classification outcomes in a single execution instead of requiring separate processes. By the end of 2024, we plan to complete testing of A4NN using at least three different NAS workflows on XFEL image data. The findings from these evaluations will be shared within the community at large.</p>
+
+<h2 id="references">
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+
+<ol class="bibliography"></ol>
+
+      </div>
+    </div>
+  </article>
+  
+</div>
+
+      </div>
+    </main>
+    <footer id="site-footer">
+  <div class="navbar navbar-full navbar-light">
+    <div class="container">
+      <div class="row small">
+        <div class="col-xs-6 col-sm-3">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="nav-item">
+              <a class="nav-link" href="/about/imprint/">
+                <i class="fa fa-copyright fa-fw"></i><span class="hidden-md-down">Imprint</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://help.github.com/articles/github-privacy-statement/">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Privacy</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 hidden-xs-down">
+          <div class="nav navbar-nav text-xs-center">
+            <span class="credit">
+              Powered by
+              <a class="nav-link" href="https://jekyllrb.com">Jekyll</a> and
+              <a class="nav-link" href="https://getbootstrap.com">Twitter Bootstrap</a>
+            </span>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io">
+                <i class="fa fa-github fa-fw"></i><span class="hidden-md-down">Sources</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/JLESC/jlesc.github.io/issues">
+                <i class="fa fa-bug fa-fw"></i><span class="hidden-md-down">Found a typo?</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="/assets/main-f379c72bc0f1ca6c99205f5005786103a2b61210898a52b504597ea1e2e75917.js"></script>
+
+<!--  -->
+
+  </body>
+</html>
