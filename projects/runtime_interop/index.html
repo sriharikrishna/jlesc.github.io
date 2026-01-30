@@ -330,13 +330,37 @@
               
               
               <li>
-                  Herault Thomas (UTK)
+                  Herault Thomas (INRIA)
               </li>
               
               
               
               <li>
                   Kale Sanjay (UIUC)
+              </li>
+              
+              
+              
+              <li>
+                  Bhosale Aditya (UIUC)
+              </li>
+              
+              
+              
+              <li>
+                  Taylor Maya (UIUC)
+              </li>
+              
+              
+              
+              <li>
+                  Rao Ritvik (UIUC)
+              </li>
+              
+              
+              
+              <li>
+                  Schuchart Joseph (EXT)
               </li>
               
               
@@ -382,27 +406,57 @@ interfaces to enhance interoperability among different runtime systems,
 optimizing performance and encouraging broader adoption of task-based
 programming models.</p>
 
+<h2 id="results-for-20252026">Results for 2025/2026</h2>
+
+<p>We have continued the monthly video call to coordinate activities and ensure continuous progress.</p>
+
+<p>Main highlights for this period:</p>
+<ul>
+  <li><strong>StarPU and PaRSEC ported to nOS-V.</strong> David Álvarez carried out a summer internship at Inria Bordeaux (hosted by Olivier Aumage and Thomas Hérault). During the internship, he completed the port of <strong>StarPU</strong> and <strong>PaRSEC</strong> to <strong>nOS-V</strong>, and evaluated their <strong>interoperability with OpenMP</strong> using <strong>three applications</strong>. This work was submitted as a full research paper to <strong>IPDPS</strong>, but it was not accepted.</li>
+  <li><strong>Charm++ reconvers discussions.</strong> We discussed the new implementation of Charm++ runtime convers, called <strong>reconvers</strong>, aimed at reducing code-base complexity, addressing technical debt, and enabling a simpler design that can better leverage new high-performance communication libraries, especially in highly multithreaded environments. Charm++ already works with reconvers but there are some performance issues with large applications.</li>
+  <li><strong>Community coordination.</strong> We plan to organize another <strong>BoF</strong> at the next <strong>JLESC workshop</strong> to align on interoperability priorities and cross-runtime collaboration.</li>
+</ul>
+
+<h2 id="results-for-20242025">Results for 2024/2025</h2>
+
+<p>Since the project’s inception in September 2024, we have established a monthly video call to coordinate activities and ensure continuous progress.</p>
+
+<p>Our work is currently organized around two main objectives:</p>
+<ul>
+  <li>Survey and Documentation of Runtime System Components
+We are actively discussing and documenting key components of various runtime systems, including schedulers, dependency management, and communication libraries. This effort aims to identify commonalities and opportunities for cross-runtime interoperability. We plan to consolidate our findings into a survey paper that will highlight similarities and differences among existing runtime systems and propose reusable components that could benefit multiple implementations.</li>
+  <li>Porting StarPU and PaRSEC to nOS-V
+We have initiated work on adapting StarPU and PaRSEC to run on top of nOS-V. A working prototype of StarPU/nOS-V has already been developed, marking a significant milestone. To further advance this effort, we have secured a summer internship for 2025 in collaboration with Inria and BSC. This internship will focus on improving the integration and evaluating the performance of StarPU and PaRSEC within the nOS-V environment</li>
+</ul>
+
 <h2 id="visits-and-meetings">Visits and meetings</h2>
 
-<p>We had a BoF session in the Kobe workshop, where we decided to start this project.
-There are no planned visits yet.</p>
+<ul>
+  <li>We had a BoF session in Kobe 2024 workshop, where we decided to start this project.</li>
+  <li>We had a BoF session in Argonne 2025 workshop, where we discussed interoperability challengues.</li>
+  <li>David Álvarez completed a summer internship at <strong>Inria Bordeaux</strong> (June–August 2025), hosted by <strong>Olivier Aumage</strong> and <strong>Thomas Hérault</strong>, focused on porting <strong>StarPU</strong> and <strong>PaRSEC</strong> to <strong>nOS-V</strong> and evaluating interoperability with <strong>OpenMP</strong>.</li>
+  <li>We plan to organize another BoF at the next <strong>JLESC workshop</strong>.</li>
+</ul>
 
-<h2 id="impact-and-publications">Impact and publications</h2>
+<h2 id="publications">Publications</h2>
 
 <ul>
+  <li>David Álvarez, Olivier Aumage, Thomas Hérault, Vicenç Beltran. <strong>Efficiently combining parallel libraries and programming models in HPC applications.</strong> <em>(to be submitted in early 2026).</em></li>
+</ul>
+
+<h2 id="impact">Impact</h2>
+<ul>
+  <li>Port of StarPU to nOS-V completed in 2025</li>
+  <li>Port of PaRSEC to nOS-V completed in 2025</li>
   <li>Solve interoperability problems between task-based programming models</li>
   <li>Increase software development productivity and reach of task-based
 programming models</li>
   <li>Research and document needs from higher-level programming systems (Charm++,
-HPX, Legion, OpenMP, OmpSs, ..) for the task-based execution systems</li>
+HPX, Legion, PaRSEC, OpenMP, OmpSs, ..) for the task-based execution systems</li>
   <li>Explore possibility of creating a standard that allows for different use
 cases currently served,  either via a flexible design or allowing for
 extensions</li>
 </ul>
-
-<h2 id="future-plans">Future plans</h2>
-
-<p>not defined yet.</p>
 
 <h2 id="references">References</h2>
 
@@ -445,6 +499,48 @@ extensions</li>
   timestamp = {Wed, 17 Jul 2024 15:59:37 +0200},
   biburl = {https://dblp.org/rec/conf/ipps/0006S024.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</li>
+<li><div class="bibtex-entry-container">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="col-md-3 col-sm-12 bibtex-ref-meta hidden">
+      <div class="row">
+        <div class="col-md-12 ref-label tag tag-default">
+          icl:675
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-sm btn-secondary col-xs-6" data-toggle="collapse" data-target="#collapseicl:675Bibtex" aria-expanded="false" aria-controls="collapseicl:675Bibtex">
+          BibTeX
+        </button>
+        <button class="btn btn-sm btn-secondary-outline col-xs-6" disabled="disabled" data-toggle="collapse" data-target="#collapseicl:675Abstract" aria-expanded="false" aria-controls="collapseicl:675Abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+
+    <div class="bibtex-ref-entry col-md-9 col-sm-12">
+      <span id="icl:675">Bosilca, George, Aurelien Bouteiller, Anthony Danalis, Thomas Herault, Pierre Lemariner, and Jack Dongarra. 2011. “DAGuE: A Generic Distributed DAG Engine for High Performance Computing.” In , 1151–58. Anchorage, Alaska, USA: IEEE.</span>
+    </div>
+  </div>
+  <div class="collapse" id="collapseicl:675Bibtex">
+    <div class="row bibtex-ref-raw">
+      <div class="col-sm-10 offset-sm-1">
+        <pre><code>@inproceedings{icl:675,
+  title = {DAGuE: A Generic Distributed DAG Engine for High Performance Computing},
+  year = {2011},
+  month = {2011-00},
+  pages = {1151-1158},
+  publisher = {IEEE},
+  address = {Anchorage, Alaska, USA},
+  keywords = {dague, parsec},
+  author = {Bosilca, George and Bouteiller, Aurelien and Danalis, Anthony and Herault, Thomas and Lemariner, Pierre and Dongarra, Jack}
 }
 </code></pre>
       </div>
